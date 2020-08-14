@@ -1,44 +1,22 @@
 import React, { Component } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import JKLogo from "../Images/titleGraphicWithLogoOPTIMIZED.svg";
 
 class Navigation extends Component {
   render() {
     return (
-      <div>
-        <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                WebSiteName
-              </a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/trade">Trade</a>
-              </li>
-              <li>
-                <a href="/portfolio">Portfolio</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="/">
-                  <span class="glyphicon glyphicon-user"></span> Sign Up
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <span class="glyphicon glyphicon-log-in"></span> Login
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <nav class="navbar navbar-dark bg-dark"></nav>
-      </div>
+      <Navbar bg="dark" variant="dark" expand="md">
+        <img id="" src={JKLogo} alt="Stock Trade King Logo"></img>
+        <Navbar.Brand href="/">StockTradeKing</Navbar.Brand>
+        <Navbar.Toggle arai-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto nav-text">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/trade">Trade</Nav.Link>
+            <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
