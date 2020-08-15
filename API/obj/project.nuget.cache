@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nlXPrFffnFWK0PFftTHb7dhEvbeDQlswN87OBBMfP29rpmkJA6RijlkufIozxdlw4yyA8Mcx0GD90Nk6DpHonQ==",
+  "dgSpecHash": "PkkDTMj4GVGXDiw5UYy3cU2ZIyTDMoGlic8Niom2O12uVZJqYC4/WK+hv65QK/3ICJ9/lVF9x7FaBorUTYCOZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\remotion.linq\\2.1.2\\remotion.linq.2.1.2.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\remotion.linq.eagerfetching\\2.1.0\\remotion.linq.eagerfetching.2.1.0.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",

@@ -4,6 +4,6 @@ C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\bin\Debug\netstanda
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.csprojAssemblyReference.cache
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.AssemblyInfoInputs.cache
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.AssemblyInfo.cs
-C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.csproj.CoreCompileInputs.cache
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.dll
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.pdb
+C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\core\obj\Debug\netstandard2.0\Core.csproj.CoreCompileInputs.cache
