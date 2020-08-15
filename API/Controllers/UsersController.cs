@@ -1,5 +1,7 @@
-﻿using Core;
+﻿using AutoMapper;
+using Core.Entities;
 using Infrastructure;
+using Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -10,32 +12,40 @@ namespace API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _repository;
+        private readonly IMapper _mapper;
 
-        public UsersController(IUsersRepo repository)
+        public UsersController(IUsersRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         // api/users
         [HttpGet]
-        public ActionResult<IEnumerable<User>> GetUsers()
+        public ActionResult<IEnumerable<UserReadModel>> GetUsers()
         {
             var users = _repository.ReadUsers();
-            return Ok(users);
+            return Ok(_mapper.Map<IEnumerable<UserReadModel>>(users));
         }
 
         // api/users/{id}
         [HttpGet("{id}")]
-        public ActionResult<User> GetUserById(int id)
+        public ActionResult<UserReadModel> GetUserById(int id)
         {
             var user = _repository.ReadUserById(id);
             if(user != null)
             {
-                return Ok(user);
+                return Ok(_mapper.Map<UserReadModel>(user));
             }
 
             return NotFound();
         }
+
+
+
+
+
+        // Left off video here at creating the user
 
         // api/users/{User}
         [HttpPost("{user}")]
@@ -44,6 +54,13 @@ namespace API.Controllers
             var userToCreate = _repository.CreateUser(user);
             return Ok(userToCreate);
         }
+
+
+
+
+
+
+
 
         // api/users/{User}
         [HttpPut("{user}")]

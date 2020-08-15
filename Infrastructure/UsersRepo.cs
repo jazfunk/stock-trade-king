@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using Core;
+using Core.Entities;
 using Infrastructure.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;

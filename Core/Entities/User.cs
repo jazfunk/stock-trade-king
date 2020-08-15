@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Core
+namespace Core.Entities
 {
     public class User
     {

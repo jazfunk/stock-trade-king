@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using Core.Entities;
 using FluentNHibernate.Mapping;
 
 namespace Infrastructure.Mappings
