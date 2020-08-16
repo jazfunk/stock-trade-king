@@ -9,8 +9,8 @@ class NewNavigation extends Component {
         <Navbar.Brand href="/">
           <img
             src={JKLogo}
-            width="30"
-            height="30"
+            width="20"
+            height="20"
             className="d-inline-block align-top"
             alt="JK Consulting Logo"
           />
