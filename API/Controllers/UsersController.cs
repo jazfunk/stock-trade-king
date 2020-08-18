@@ -59,14 +59,26 @@ namespace API.Controllers
 
 
         // PUT
-        [HttpPut("{user}")]  // api/users/{user}
-        public ActionResult<UserUpdateModel> UpdateUser(UserUpdateModel userUpdateModel)
+        [HttpPut("{id}")]  // api/users/{id}
+        public ActionResult UpdateUser(int id, UserUpdateModel userUpdateModel)
         {
-            var userModel = _mapper.Map<User>(userUpdateModel);
-            _repository.UpdateUser(userModel);
+            var userModelFromRepo = _repository.ReadUserById(id);
+            if(userModelFromRepo == null)
+            {
+                return NotFound();
+            }
 
-            var userReadModel = _mapper.Map<UserReadModel>(userModel);
-            return CreatedAtRoute(nameof(GetUserById), new { Id = userReadModel.Id }, userReadModel);
+            _mapper.Map(userUpdateModel, userModelFromRepo);
+
+            _repository.UpdateUser(id);
+
+            return NoContent();
+
+            //var userModel = _mapper.Map<User>(userUpdateModel);
+            //_repository.UpdateUser(userModel);
+
+            //var userReadModel = _mapper.Map<UserReadModel>(userModel);
+            //return CreatedAtRoute(nameof(GetUserById), new { Id = userReadModel.Id }, userReadModel);
         }
 
 

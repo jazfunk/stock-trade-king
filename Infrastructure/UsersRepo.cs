@@ -13,7 +13,7 @@ namespace Infrastructure
         User CreateUser(User userToCreate);
         User ReadUserById(int id);
         IEnumerable<User> ReadUsers();
-        User UpdateUser(User userToUpdate);
+        void UpdateUser(int id);
         User DeleteUserById(int id);
     }
 
@@ -73,21 +73,21 @@ namespace Infrastructure
             return users;
         }
 
-        public User UpdateUser(User userToUpdate)
+
+        public void UpdateUser(int id)
         {
-            var userUpdates = new User();
+            var userUpdated = new User();
+            var userToUpdate = _session.Get<User>(id);
             using (var transaction = _session.BeginTransaction())
             {
-                userUpdates.FirstName = userToUpdate.FirstName;
-                userUpdates.LastName = userToUpdate.LastName;
-                userUpdates.PassWord = userToUpdate.PassWord;
-                userUpdates.Email = userToUpdate.Email;
+                userUpdated.FirstName = userToUpdate.FirstName;
+                userUpdated.LastName = userToUpdate.LastName;
+                userUpdated.PassWord = userToUpdate.PassWord;
+                userUpdated.Email = userToUpdate.Email;
 
-                _session.SaveOrUpdate(userUpdates);
+                _session.Update(userUpdated);
                 transaction.Commit();
             }
-
-            return userUpdates;
         }
 
         public User DeleteUserById(int id)
