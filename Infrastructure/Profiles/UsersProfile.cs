@@ -8,7 +8,9 @@ namespace Infrastructure.Profiles
     {
         public UsersProfile()
         {
+            // Source -> Target
             CreateMap<User, UserReadModel>();
+            CreateMap<UserCreateModel, User>();
         }
     }
 }

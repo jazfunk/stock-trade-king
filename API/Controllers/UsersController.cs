@@ -14,22 +14,23 @@ namespace API.Controllers
         private readonly IUsersRepo _repository;
         private readonly IMapper _mapper;
 
+
         public UsersController(IUsersRepo repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        // api/users
-        [HttpGet]
+        // GET
+        [HttpGet]  // api/users
         public ActionResult<IEnumerable<UserReadModel>> GetUsers()
         {
             var users = _repository.ReadUsers();
             return Ok(_mapper.Map<IEnumerable<UserReadModel>>(users));
         }
 
-        // api/users/{id}
-        [HttpGet("{id}")]
+        // GET
+        [HttpGet("{id}", Name="GetUserById")]  // api/users/{id}
         public ActionResult<UserReadModel> GetUserById(int id)
         {
             var user = _repository.ReadUserById(id);
@@ -41,18 +42,31 @@ namespace API.Controllers
             return NotFound();
         }
 
-
-
-
-
-        // Left off video here at creating the user
-
-        // api/users/{User}
-        [HttpPost("{user}")]
-        public ActionResult<User> CreateUser(User user)
+        // POST
+        [HttpPost]  // api/users/{UserReadModel}
+        public ActionResult<UserReadModel> CreateUser(UserCreateModel userCreateModel)
         {
-            var userToCreate = _repository.CreateUser(user);
-            return Ok(userToCreate);
+            var userModel = _mapper.Map<User>(userCreateModel);
+            _repository.CreateUser(userModel);
+
+            var userReadModel = _mapper.Map<UserReadModel>(userModel);
+            return CreatedAtRoute(nameof(GetUserById), new { Id = userReadModel.Id }, userReadModel);
+        }
+
+
+
+
+
+
+        // PUT
+        [HttpPut("{user}")]  // api/users/{user}
+        public ActionResult<UserUpdateModel> UpdateUser(UserUpdateModel userUpdateModel)
+        {
+            var userModel = _mapper.Map<User>(userUpdateModel);
+            _repository.UpdateUser(userModel);
+
+            var userReadModel = _mapper.Map<UserReadModel>(userModel);
+            return CreatedAtRoute(nameof(GetUserById), new { Id = userReadModel.Id }, userReadModel);
         }
 
 
@@ -62,16 +76,9 @@ namespace API.Controllers
 
 
 
-        // api/users/{User}
-        [HttpPut("{user}")]
-        public ActionResult<User> UpdateUser(User user)
-        {
-            var userToUpdate = _repository.UpdateUser(user);
-            return Ok(userToUpdate);
-        }
 
-        // api/users/{id}
-        [HttpDelete("{id}")]
+        // DELETE
+        [HttpDelete("{id}")]  // api/users/{id}
         public ActionResult<User> DeleteUser(int id)
         {
             var userToDelete = _repository.DeleteUserById(id);

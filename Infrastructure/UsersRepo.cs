@@ -83,7 +83,7 @@ namespace Infrastructure
                 userUpdates.PassWord = userToUpdate.PassWord;
                 userUpdates.Email = userToUpdate.Email;
 
-                _session.Update(userUpdates);
+                _session.SaveOrUpdate(userUpdates);
                 transaction.Commit();
             }
 
