@@ -2,7 +2,6 @@
 using Core.Entities;
 using Infrastructure;
 using Infrastructure.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -15,7 +14,6 @@ namespace API.Controllers
     {
         private readonly IUsersRepo _repository;
         private readonly IMapper _mapper;
-
 
         public UsersController(IUsersRepo repository, IMapper mapper)
         {
@@ -96,7 +94,6 @@ namespace API.Controllers
 
             return NoContent();
         }
-
 
         // DELETE
         [HttpDelete("{id}")]  // api/users/{id}
