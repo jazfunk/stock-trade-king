@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj": {}
+    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj": {
+    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj",
+        "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\obj\\",
+        "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeff.ACTIONTRAFFIC\\AppData\\Roaming\\NuGet\\NuGet.Config",

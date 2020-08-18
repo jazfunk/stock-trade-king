@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n349aZYWPFFEHO062F/Xc/RR5MbIRtBbgOiQ8sSGiCYVGLl44YL4bSmjli2yVyjZXzETijyUW2LkipelN24D3A==",
+  "dgSpecHash": "L1nhnBKxNdfEb2lDg6o8V5tBv4anEBvKWwrYJIlg8WI3SNxdGGSpQxlONsGftPPYLos9vIXrbTbY+OHTAmVxfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
