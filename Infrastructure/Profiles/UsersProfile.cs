@@ -12,6 +12,7 @@ namespace Infrastructure.Profiles
             CreateMap<User, UserReadModel>();
             CreateMap<UserCreateModel, User>();
             CreateMap<UserUpdateModel, User>();
+            CreateMap<User, UserUpdateModel>();
         }
     }
 }

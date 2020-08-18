@@ -5,6 +5,7 @@ using Infrastructure.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using System;
 
 namespace Infrastructure
 {
@@ -13,8 +14,8 @@ namespace Infrastructure
         User CreateUser(User userToCreate);
         User ReadUserById(int id);
         IEnumerable<User> ReadUsers();
-        void UpdateUser(int id);
-        User DeleteUserById(int id);
+        void UpdateUser(User user);
+        void DeleteUserById(int id);
     }
 
     public class UsersRepo : IUsersRepo
@@ -74,33 +75,26 @@ namespace Infrastructure
         }
 
 
-        public void UpdateUser(int id)
+        public void UpdateUser(User user)
         {
-            var userUpdated = new User();
-            var userToUpdate = _session.Get<User>(id);
             using (var transaction = _session.BeginTransaction())
             {
-                userUpdated.FirstName = userToUpdate.FirstName;
-                userUpdated.LastName = userToUpdate.LastName;
-                userUpdated.PassWord = userToUpdate.PassWord;
-                userUpdated.Email = userToUpdate.Email;
-
-                _session.Update(userUpdated);
+                _session.Update(user);
                 transaction.Commit();
             }
         }
 
-        public User DeleteUserById(int id)
+        public void DeleteUserById(int id)
         {
-            var userToDelete = new User();
+            //var userToDelete = new User();
             using (var transaction = _session.BeginTransaction())
             {
-                userToDelete = _session.Get<User>(id);
-                _session.Delete(userToDelete);
+                //var userToDelete = _session.Get<User>(id);                
+                _session.Delete(_session.Get<User>(id));
                 transaction.Commit();
             }
 
-            return userToDelete;
+            //return userToDelete;
         }
     }
 }

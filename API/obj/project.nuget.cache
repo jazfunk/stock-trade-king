@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AFTcJE3j818J0M/y3XtWPcpA3P+ZbpaQ0wDSP1xo88jd+RFBbhRAFY0h1SsLotFleEUXMJ52HdLL7UjZybJQ+w==",
+  "dgSpecHash": "j/xBkWXAw55+oj3MMKAJpWHy3cREoPsTvSMNIunIqAKFwkh3sOKvscr0wyaIz7Rqfsu2xq15X56blmO1H3YJVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\fluentnhibernate\\2.1.2\\fluentnhibernate.2.1.2.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\iesi.collections\\4.0.4\\iesi.collections.4.0.4.nupkg.sha512",
+    "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.7\\microsoft.aspnetcore.jsonpatch.3.1.7.nupkg.sha512",
+    "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.7\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.7.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.4\\microsoft.aspnetcore.nodeservices.3.1.4.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.4\\microsoft.aspnetcore.spaservices.3.1.4.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.aspnetcore.spaservices.extensions\\3.1.4\\microsoft.aspnetcore.spaservices.extensions.3.1.4.nupkg.sha512",
@@ -31,6 +33,7 @@
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\nhibernate\\5.1.1\\nhibernate.5.1.1.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\remotion.linq\\2.1.2\\remotion.linq.2.1.2.nupkg.sha512",
