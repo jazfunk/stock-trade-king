@@ -29,11 +29,11 @@ namespace Infrastructure
             _sessionFactory = Fluently.Configure()
                 .Database(PostgreSQLConfiguration.PostgreSQL82
                 .ConnectionString(c => c
-                    .Host("localhost")
+                    .Host("kingpgsql.postgres.database.azure.com")
                     .Port(5432)
-                    .Database("stockappdb")
-                    .Username("production")
-                    .Password("dbp@$$")
+                    .Database("stocktradeking")
+                    .Username("kingadmin@kingpgsql")
+                    .Password("N0M0reSn0w")
                     ))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(UserMap))))
                 .BuildSessionFactory();
@@ -74,7 +74,6 @@ namespace Infrastructure
             return users;
         }
 
-
         public void UpdateUser(User user)
         {
             using (var transaction = _session.BeginTransaction())
@@ -86,15 +85,11 @@ namespace Infrastructure
 
         public void DeleteUserById(int id)
         {
-            //var userToDelete = new User();
             using (var transaction = _session.BeginTransaction())
-            {
-                //var userToDelete = _session.Get<User>(id);                
+            {            
                 _session.Delete(_session.Get<User>(id));
                 transaction.Commit();
             }
-
-            //return userToDelete;
         }
     }
 }
