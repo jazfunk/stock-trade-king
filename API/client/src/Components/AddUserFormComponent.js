@@ -7,7 +7,7 @@ const AddUserFormComponent = (props) => {
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter First Name" />
+          <Form.Control type="text" placeholder="Enter your first name" />
           <Form.Label>Last Name</Form.Label>
           <Form.Control type="text" placeholder="Enter Last Name" />
           <Form.Label>Email address</Form.Label>
