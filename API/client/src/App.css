@@ -1,23 +1,35 @@
 .App {
   display: grid;
-  /* flex-flow: column; */
+  /* flex-flow: column; */  
   align-items: stretch;
-  background: url('Images/bullVertical.jpg') no-repeat center top fixed;
+  background: url('Images/wallst.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+}
+
+a:link {
+  color: #46344E;
+}
+a:visited {
+  color: #46344E;
+}
+a:hover {
+  color: #FAED26;
+}
+a:active {
+  color: #9B786F;
 }
 
 .trans-bg {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.light-text {
-  /* color: #9D8D8F; */
-  color: #FFFFFF;
+.form-container {
+  width: 50vw;
 }
 
-
 .home {
+  margin: 0 auto;
   flex: 1;
   overflow:auto;
   background-color: rgba(70, 52, 78, 0.6);

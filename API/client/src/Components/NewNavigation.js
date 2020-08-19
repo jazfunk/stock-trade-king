@@ -12,7 +12,7 @@ class NewNavigation extends Component {
             width="30"
             height="30"
             className="d-inline-block align-top"
-            alt="JK Consulting Logo"
+            alt="StockTradeKing"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -33,7 +33,7 @@ namespace Infrastructure
                     .Port(5432)
                     .Database("stocktradeking")
                     .Username("kingadmin@kingpgsql")
-                    .Password("N0M0reSn0w")
+                    .Password("dbp@$$222")
                     ))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(UserMap))))
                 .BuildSessionFactory();

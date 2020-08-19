@@ -4,7 +4,7 @@ import JkLogo from "../Images/titleGraphicWithLogoOPTIMIZED.svg";
 const Footer = () => {
   return (
     <footer>
-      <img id="jk-logo" src={JkLogo} alt="Jeff King" />
+      <img id="jk-logo" width="15%" src={JkLogo} alt="Jeff King" />
       <div>
         <a href="https://github.com/jazfunk">GitHub</a>
         &nbsp; &nbsp;
