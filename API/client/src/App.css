@@ -2,7 +2,7 @@
   display: grid;
   /* flex-flow: column; */
   align-items: stretch;
-  background: url('Images/wallst.jpg') no-repeat center center fixed;
+  background: url('Images/bullVertical.jpg') no-repeat center top fixed;
   background-size: cover;
   height: 100vh;
 }
@@ -11,19 +11,25 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.light-text {
+  /* color: #9D8D8F; */
+  color: #FFFFFF;
+}
+
 
 .home {
   flex: 1;
   overflow:auto;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  min-height: 85vh;  
+  background-color: rgba(70, 52, 78, 0.6);
+  height: 81vh;
+  color: #faed26;
 }
 
 footer {
-  flex: 0 1 80px;
-  background-color: rgba(59, 148, 94, .6);
+  flex: 0 1;
+  background-color: rgba(155, 120, 111, 0.2);
   text-align: center;
-  min-height: 60px;
+  min-height: 10vh;
   font-size: calc(8px + 1vmin);
   font-weight: bold;
   color: #feffff;

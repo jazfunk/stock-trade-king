@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import JKLogo from "../Images/myFavIconOPTIMIZED.svg";
+import AppLogo from "../Images/stockTradeKingFavIconOPTIMIZED.svg";
 
 class NewNavigation extends Component {
   render() {
     return (
-      <Navbar bg="dark" variant="dark" expand="md">
+      <Navbar bg="dark" variant="dark" sticky="top" expand="md">
         <Navbar.Brand href="/">
           <img
-            src={JKLogo}
-            width="20"
-            height="20"
+            src={AppLogo}
+            width="30"
+            height="30"
             className="d-inline-block align-top"
             alt="JK Consulting Logo"
           />
@@ -20,6 +20,7 @@ class NewNavigation extends Component {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/trade">Trade</Nav.Link>
+            <Nav.Link href="/portfolio">Portfolio</Nav.Link>
             <NavDropdown title="My Account" id="basic-nav-dropdown">
               <NavDropdown.Item href="/login">Login</NavDropdown.Item>
               <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>

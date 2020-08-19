@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Core.Entities;
-using Infrastructure.Models;
+using API.Models;
 
-namespace Infrastructure.Profiles
+namespace API.Profiles
 {
     public class UsersProfile : Profile
     {

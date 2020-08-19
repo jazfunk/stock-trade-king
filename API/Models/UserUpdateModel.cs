@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Infrastructure.Models
+namespace API.Models
 {
-    public class UserCreateModel
-    {        
+    public class UserUpdateModel
+    {
         [Required]
         public virtual string FirstName { get; set; }
 
