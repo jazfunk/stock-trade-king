@@ -19,6 +19,7 @@ API/client/node_modules/
 .env.production.local
 
 StockTradeKingLayout.cdr
+Backup_of_StockTradeKingLayout.cdr
 
 npm-debug.log*
 yarn-debug.log*
