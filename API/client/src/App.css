@@ -31,7 +31,7 @@ a:active {
 
 .color-nav {
   background-color: rgba(70, 52, 78, 0.8);
-  height: 10vh;
+  /* height: 10vh; */
 }
 
 .form-container {
@@ -46,7 +46,7 @@ a:active {
   /* flex: 1; */
   overflow: auto;
   background-color: rgba(155, 120, 111, 0.4);
-  height: 80vh;
+  height: 83vh;
   color: #faed26;
   padding: 10px;
 }

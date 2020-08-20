@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NewNavigation from "./NewNavigation";
 import Home from "../Home";
@@ -7,22 +7,22 @@ import Portfolio from "../Portfolio";
 import AddUser from "../AddUser";
 import Login from "../Login";
 
-class Header extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <header>
-          <NewNavigation />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/trade" exact component={Trade} />
-            <Route path="/portfolio" exact component={Portfolio} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/signup" exact component={AddUser} />
-          </Switch>
-        </header>
-      </BrowserRouter>)
-  }
-}
+const Header = (props) => {
+  return (
+    <BrowserRouter>
+      <header>
+        <NewNavigation />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/trade" exact component={Trade} />
+          <Route path="/portfolio" exact component={Portfolio} />
+          <Route path="/login" exact component={Login} />
+          {/* <Route path="/signup" exact component={AddUser} /> */}
+          <Route path="/signup" render={(props) => <AddUser {...props} user={props.user} />} />
+        </Switch>
+      </header>
+    </BrowserRouter>
+  );
+};
 
 export default Header;
