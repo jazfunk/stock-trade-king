@@ -5,7 +5,7 @@ import AppLogo from "../Images/stockTradeKingFavIconOPTIMIZED.svg";
 class NewNavigation extends Component {
   render() {
     return (
-      <Navbar bg="dark" variant="dark" sticky="top" expand="md">
+      <Navbar className="color-nav" variant="dark" expand="md">
         <Navbar.Brand href="/">
           <img
             src={AppLogo}

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import "./index.css";
 import * as serviceWorker from './serviceWorker';
-import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "./App.css";
 
 // ReactDOM.render(<React.StrictMode><App /></React.StrictMode>, document.getElementById('root'));
 ReactDOM.render(<App />, document.getElementById('root'));
