@@ -9,7 +9,7 @@ using System;
 
 namespace Infrastructure
 {
-    public interface IUsersRepo
+    public interface IUserRepo
     {
         User CreateUser(User userToCreate);
         User ReadUserById(int id);
@@ -18,13 +18,13 @@ namespace Infrastructure
         void DeleteUserById(int id);
     }
 
-    public class UsersRepo : IUsersRepo
+    public class UserRepo : IUserRepo
     {
 
         private readonly ISession _session;
         private readonly ISessionFactory _sessionFactory;
 
-        public UsersRepo()
+        public UserRepo()
         {
             _sessionFactory = Fluently.Configure()
                 .Database(PostgreSQLConfiguration.PostgreSQL82

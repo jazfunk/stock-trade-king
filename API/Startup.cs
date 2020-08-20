@@ -30,7 +30,7 @@ namespace API
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IUsersRepo, UsersRepo>();
+            services.AddScoped<IUserRepo, UserRepo>();
 
             services.AddSpaStaticFiles(config =>
             {

@@ -10,12 +10,12 @@ namespace API.Controllers
 {
     [Route("api/users")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IUsersRepo _repository;
+        private readonly IUserRepo _repository;
         private readonly IMapper _mapper;
 
-        public UsersController(IUsersRepo repository, IMapper mapper)
+        public UserController(IUserRepo repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

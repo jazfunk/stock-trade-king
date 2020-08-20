@@ -4,9 +4,9 @@ using API.Models;
 
 namespace API.Profiles
 {
-    public class UsersProfile : Profile
+    public class UserProfile : Profile
     {
-        public UsersProfile()
+        public UserProfile()
         {
             // Source -> Target
             CreateMap<User, UserReadModel>();
