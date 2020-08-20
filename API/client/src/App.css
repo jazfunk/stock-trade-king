@@ -1,7 +1,7 @@
 .App {
   display: grid;
   /* flex-flow: column; */
-  align-items: stretch;
+  /* align-items: stretch; */
   background: url("Images/wallst.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -30,19 +30,22 @@ a:active {
 }
 
 .color-nav {
-  background-color: rgba(70, 52, 78, 0.9);
+  background-color: rgba(70, 52, 78, 0.8);
   height: 10vh;
 }
 
 .form-container {
+  margin: 0 auto;
+  border: 1px #9B786F dotted;
+  background-color: rgba(90, 85, 96, 0.8);
+  padding: 10px;
   width: 50vw;
 }
 
 .home {
-  margin: 0 auto;
-  flex: 1;
+  /* flex: 1; */
   overflow: auto;
-  background-color: rgba(70, 52, 78, 0.6);
+  background-color: rgba(155, 120, 111, 0.4);
   height: 80vh;
   color: #faed26;
   padding: 10px;
@@ -50,7 +53,7 @@ a:active {
 
 footer {
   flex: 0 1;
-  background-color: rgba(155, 120, 111, 0.2);
+  background-color: rgba(157, 141, 143, 0.8);
   text-align: center;
   min-height: 10vh;
   font-size: calc(8px + 1vmin);

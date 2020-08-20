@@ -1,27 +1,34 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col } from "react-bootstrap";
 
 const AddUserFormComponent = (props) => {
   return (
     <section className="form-container">
       <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your first name" />
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Last Name" />
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
+        <Form.Row>
+          <Form.Group as={Col} controlId="formFirstName">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control type="text" placeholder="" />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formLastName">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control type="text" placeholder="" />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col} controlId="formEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="" />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="" />
+          </Form.Group>
+        </Form.Row>
         {/* <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group> */}
-        <Button variant="light" type="submit">
+        <Button variant="primary" type="submit">
           Submit
         </Button>
       </Form>
