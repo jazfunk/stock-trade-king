@@ -1,9 +1,11 @@
 import React from "react";
+import IexAPI from "./IexAPI";
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   return (
     <div className="home">
       Portfolio
+      <IexAPI user={props.user}/>
     </div>
   );
 };

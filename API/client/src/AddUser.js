@@ -10,7 +10,7 @@ class AddUser extends Component {
     super();
     this.state = {
       isLoggedIn: false,
-      users: [],
+      users: []
     };
   }
 
