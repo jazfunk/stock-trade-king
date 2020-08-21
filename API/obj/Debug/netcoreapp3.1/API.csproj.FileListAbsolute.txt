@@ -66,3 +66,4 @@ C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\API\bin\Debug\netcoreapp
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jeff\Documents\CSharpProjects\stock-trade-king\api\bin\Debug\netcoreapp3.1\package-lock.json

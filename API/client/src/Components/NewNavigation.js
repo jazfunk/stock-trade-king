@@ -11,11 +11,11 @@ class NewNavigation extends Component {
             src={AppLogo}
             width="30"
             height="30"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top navbrand-glow-border"
             alt="StockTradeKing"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
@@ -24,7 +24,7 @@ class NewNavigation extends Component {
             <NavDropdown title="My Account" id="basic-nav-dropdown">
               <NavDropdown.Item className="custom-dropdown-nav" href="/login">Login</NavDropdown.Item>
               <NavDropdown.Item className="custom-dropdown-nav" href="/signup">Sign Up</NavDropdown.Item>
-              <NavDropdown.Divider />
+              {/* <NavDropdown.Divider /> */}
               <NavDropdown.Item className="custom-dropdown-nav" href="/logout">Log Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
