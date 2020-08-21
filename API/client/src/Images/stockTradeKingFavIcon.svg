@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100px" height="100px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 100 100"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#FEFEFE;stroke-width:2.77756}
+    .fil2 {fill:none}
+    .fil0 {fill:url(#id1)}
+    .fil1 {fill:url(#id2);fill-rule:nonzero}
+   ]]>
+  </style>
+   <clipPath id="id0">
+    <path d="M50 0c28,0 50,22 50,50 0,28 -22,50 -50,50 -28,0 -50,-22 -50,-50 0,-28 22,-50 50,-50z"/>
+   </clipPath>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="-0" y1="50" x2="100" y2="50">
+   <stop offset="0" style="stop-opacity:1; stop-color:#16344E"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#7A8D8F"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="24.2106" y1="50" x2="75.7894" y2="50">
+   <stop offset="0" style="stop-opacity:1; stop-color:#DECF00"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FAED26"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g>
+  </g>
+  <g style="clip-path:url(#id0)">
+   <g>
+    <g id="_1946646203232">
+     <path class="fil0" d="M50 0c28,0 50,22 50,50 0,28 -22,50 -50,50 -28,0 -50,-22 -50,-50 0,-28 22,-50 50,-50z"/>
+     <path class="fil1 str0" d="M44 -1l0 17c-11,4 -20,11 -20,20 0,9 7,14 16,18 7,4 10,5 10,9 0,4 -13,8 -25,8l1 18c3,0 15,-1 18,-3l0 15 15 0 -1 -18c6,-3 18,-11 18,-22 0,-8 -6,-14 -15,-18 -8,-4 -11,-5 -11,-8 0,-5 11,-7 23,-7l-1 -19c-3,0 -12,2 -14,2l1 -12 -15 0z"/>
+    </g>
+   </g>
+  </g>
+  <path class="fil2" d="M50 0c28,0 50,22 50,50 0,28 -22,50 -50,50 -28,0 -50,-22 -50,-50 0,-28 22,-50 50,-50z"/>
+ </g>
+</svg>

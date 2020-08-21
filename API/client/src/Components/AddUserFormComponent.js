@@ -52,7 +52,7 @@ const AddUserFormComponent = (props) => {
         {/* <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group> */}
-        <Button variant="primary" type="submit">
+        <Button variant="light" type="submit">
           Submit
         </Button>
       </Form>
