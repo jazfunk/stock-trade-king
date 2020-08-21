@@ -2,11 +2,20 @@ import React, { Component } from "react";
 import AddUserForm from "./Components/AddUserFormComponent";
 
 class AddUser extends Component {
-  constructor() {
+  ADD_USER_URL_HTTP = "http://localhost:5000/api/users/";
+  ADD_USER_URL_HTTPS = "https://localhost:5001/api/users/";
+  _isLoggedIn = false;
+
+  constructor(props) {
     super();
     this.state = {
+      isLoggedIn: false,
       users: [],
     };
+  }
+
+  displayLoggedInUser = () => {
+    // Code this up
   }
 
   componentDidMount = () => {
@@ -31,23 +40,39 @@ class AddUser extends Component {
     const user = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      passWord: this.state.passWord,
       email: this.state.email,
+      passWord: this.state.passWord,
     };
 
-    console.log(user);
+    this.postNewUser(user);
+  };
 
-    const users = this.state.users.map((user) => 
-      Object.assign({}, user)
-    );
+  postNewUser = (user) => {
+    const axios = require("axios");
+    var data = JSON.stringify(user);
+    var config = {
+      method: "post",
+      url: this.ADD_USER_URL_HTTPS,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
 
-    users.push(user);
-    
-    this.setState({
-      users: users,
-    });
+    axios(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        alert(`Congratulations, ${user.firstName}! \nYou're all signed up`);
 
-    console.log(users);
+        this.setState({
+          isLoggedIn: true,
+          user: user,
+        })
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
