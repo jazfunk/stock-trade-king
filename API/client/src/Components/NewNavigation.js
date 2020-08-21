@@ -22,10 +22,10 @@ class NewNavigation extends Component {
             <Nav.Link href="/trade">Trade</Nav.Link>
             <Nav.Link href="/portfolio">Portfolio</Nav.Link>
             <NavDropdown title="My Account" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-              <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+              <NavDropdown.Item className="custom-dropdown-nav" href="/login">Login</NavDropdown.Item>
+              <NavDropdown.Item className="custom-dropdown-nav" href="/signup">Sign Up</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/logout">Log Out</NavDropdown.Item>
+              <NavDropdown.Item className="custom-dropdown-nav" href="/logout">Log Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

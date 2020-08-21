@@ -7,9 +7,9 @@ const Footer = () => {
       <img id="jk-logo" width="15%" src={JkLogo} alt="Jeff King" />
       <div>
         <a href="https://github.com/jazfunk">GitHub</a>
-        &nbsp; &nbsp;
+        &nbsp;|&nbsp;
         <a href="https://www.linkedin.com/in/jeffking222/">Linkedin</a>
-        &nbsp;&nbsp;
+        &nbsp;|&nbsp;
         <a href="https://www.jeff-king.net">Website</a>
       </div>
     </footer>
