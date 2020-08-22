@@ -14,6 +14,7 @@ const AddUserFormComponent = (props) => {
               type="text"
               placeholder=""
               name="firstName"
+              required={true}
             />
           </Form.Group>
           <Form.Group as={Col} controlId="frmLastName">
@@ -24,6 +25,7 @@ const AddUserFormComponent = (props) => {
               type="text"
               placeholder=""
               name="lastName"
+              required={true}
             />
           </Form.Group>
         </Form.Row>
@@ -36,6 +38,7 @@ const AddUserFormComponent = (props) => {
               type="email"
               placeholder=""
               name="email"
+              required={true}
             />
           </Form.Group>
           <Form.Group as={Col} controlId="frmPassWord">
@@ -46,6 +49,7 @@ const AddUserFormComponent = (props) => {
               type="password"
               placeholder=""
               name="passWord"
+              required={true}
             />
           </Form.Group>
         </Form.Row>

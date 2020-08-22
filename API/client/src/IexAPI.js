@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import API_IEX from "./Components/IexAPIComponent";
 import StockList from "./Components/StocksList";
-import { iex } from "./config/iex";
+
+const iex = {
+  IEX_BASE_URL: "https://cloud.iexapis.com/stable/",
+  _pToken: "pk_05c40d7c1b96480583b08175d1fb4408", 
+  _endUrl: "intraday-prices?chartLast=1&token=" 
+}
 
 class IexAPI extends Component {
   constructor(props) {
@@ -35,8 +40,8 @@ class IexAPI extends Component {
 
   searchIEXForSymbol = (symbol) => {
     const axios = require("axios");
-    let data = "";
     const searchURL = `${iex.IEX_BASE_URL}stock/${symbol}/${iex._endUrl}${iex._pToken}`;
+    let data = "";
 
     var config = {
       method: "get",

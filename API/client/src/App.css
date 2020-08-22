@@ -58,6 +58,7 @@ a:active {
   filter: drop-shadow(0 0 0.4rem #16344e);
   padding: 20px;
   width: 75vw;
+  color: #faed26;
 }
 
 .home {
