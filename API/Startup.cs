@@ -32,6 +32,8 @@ namespace API
 
             services.AddScoped<IUserRepo, UserRepo>();
 
+            services.AddScoped<IUserPortfolioRepo, UserPortfolioRepo>();
+
             services.AddSpaStaticFiles(config =>
             {
                 config.RootPath = "client/build";

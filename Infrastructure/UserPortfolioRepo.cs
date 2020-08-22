@@ -5,25 +5,24 @@ using Infrastructure.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using System;
 
 namespace Infrastructure
 {
-    public interface IUserRepo
+    public interface IUserPortfolioRepo
     {
-        User CreateUser(User userToCreate);
-        User ReadUserById(int id);
-        IEnumerable<User> ReadUsers();
-        void UpdateUser(User user);
-        void DeleteUserById(int id);
+        UserPortfolio CreatePortfolioItem(UserPortfolio portfolioItem);
+        UserPortfolio ReadPortfolioItemById(int id);
+        IEnumerable<UserPortfolio> ReadPortfolioItems();
+        void UpdatePortfolioItem(UserPortfolio portfolioItem);
+        void DeletePortfolioItem(int id);
     }
 
-    public class UserRepo : IUserRepo
+    public class UserPortfolioRepo : IUserPortfolioRepo
     {
         private readonly ISession _session;
         private readonly ISessionFactory _sessionFactory;
 
-        public UserRepo()
+        public UserPortfolioRepo()
         {
             _sessionFactory = Fluently.Configure()
                 .Database(PostgreSQLConfiguration.PostgreSQL82
@@ -34,59 +33,59 @@ namespace Infrastructure
                     .Username("kingadmin@kingpgsql")
                     .Password("dbp@$$222")
                     ))
-                .Mappings(x => x.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(UserMap))))
+                .Mappings(x => x.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(UserPortfolioMap))))
                 .BuildSessionFactory();
 
             _session = _sessionFactory.OpenSession();
         }
 
-        public User CreateUser(User userToCreate)
+        public UserPortfolio CreatePortfolioItem(UserPortfolio portfolioItem)
         {
-            var userCreated = new User();
+            var itemCreated = new UserPortfolio();
             using (var transaction = _session.BeginTransaction())
             {
-                var newId = _session.Save(userToCreate);
-                userCreated = _session.Get<User>(newId);
+                var newId = _session.Save(portfolioItem);
+                itemCreated = _session.Get<UserPortfolio>(newId);
                 transaction.Commit();
             }
 
-            return userCreated;
+            return itemCreated;
         }
 
-        public User ReadUserById(int id)
+        public UserPortfolio ReadPortfolioItemById(int id)
         {
-            var userRead = new User();
+            var itemRead = new UserPortfolio();
             using (var transaction = _session.BeginTransaction())
             {
-                userRead = _session.Get<User>(id);
+                itemRead = _session.Get<UserPortfolio>(id);
                 transaction.Commit();
             }
 
-            return userRead;            
+            return itemRead;
         }
 
-        public IEnumerable<User> ReadUsers()
+        public IEnumerable<UserPortfolio> ReadPortfolioItems()
         {
             var transaction = _session.BeginTransaction();
-            var users = _session.CreateCriteria<User>().List<User>();
+            var items = _session.CreateCriteria<UserPortfolio>().List<UserPortfolio>();
             transaction.Commit();
-            return users;
+            return items;
         }
 
-        public void UpdateUser(User user)
+        public void UpdatePortfolioItem(UserPortfolio portfolioItem)
         {
             using (var transaction = _session.BeginTransaction())
             {
-                _session.Update(user);
+                _session.Update(portfolioItem);
                 transaction.Commit();
             }
         }
 
-        public void DeleteUserById(int id)
+        public void DeletePortfolioItem(int id)
         {
             using (var transaction = _session.BeginTransaction())
-            {            
-                _session.Delete(_session.Get<User>(id));
+            {
+                _session.Delete(_session.Get<UserPortfolio>(id));
                 transaction.Commit();
             }
         }

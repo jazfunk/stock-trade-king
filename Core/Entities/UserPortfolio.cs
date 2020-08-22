@@ -1,0 +1,23 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Core.Entities
+{
+    public class UserPortfolio
+    {
+        [Key]
+        public virtual int Id { get; set; }
+
+        [Required]
+        public virtual int UserId { get; set; }
+
+        [Required]
+        public virtual string StockSymbol { get; set; }
+
+        [Required]
+        public virtual DateTime PurchaseDate { get; set; }
+
+        [Required]
+        public virtual double PurchasePrice { get; set; }
+    }
+}
