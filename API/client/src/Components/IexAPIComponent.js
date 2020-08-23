@@ -7,13 +7,18 @@ const IexAPIComponent = (props) => {
       <Form onSubmit={props.handleSubmit}>
         <Form.Row className="align-items-center">
           <Col xs="auto">
+            <Button onClick={props.loadPortfolioItems} className="mb-2">
+              View Portfolio
+            </Button>
+          </Col>
+          <Col xs="auto">
             <Form.Control
               className="mb-2"
-              id="inlineFormInput"
-              onChange={props.handleChange}              
+              onChange={props.handleChange}
               type="text"
               placeholder="Search Stock Symbol"
               name="stockSymbol"
+              required={true}
             />
           </Col>
           <Col xs="auto">

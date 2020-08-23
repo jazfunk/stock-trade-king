@@ -29,6 +29,10 @@ a:active {
   color: #FAED26;
 }
 
+.table-th {
+  color: #FAED26;
+}
+
 .custom-nav {
   background-color: rgba(22, 52, 78, 0.8);
 }
@@ -59,6 +63,10 @@ a:active {
   padding: 20px;
   width: 75vw;
   color: #faed26;
+}
+
+.table-bg-trans {
+  background-color: rgba(22, 52, 78, 0.6);
 }
 
 .home {

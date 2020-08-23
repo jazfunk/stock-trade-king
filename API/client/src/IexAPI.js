@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import API_IEX from "./Components/IexAPIComponent";
 import StockList from "./Components/StocksList";
-
-const iex = {
-  IEX_BASE_URL: "https://cloud.iexapis.com/stable/",
-  _pToken: "pk_05c40d7c1b96480583b08175d1fb4408", 
-  _endUrl: "intraday-prices?chartLast=1&token=" 
-}
+import Stock from "./Components/Stock";
+import axios from "axios";
+import { iex, USER_PORTFOLIO_URL } from "./Components/configBase";
 
 class IexAPI extends Component {
   constructor(props) {
     super();
     this.state = {
-      user: props.user,
-      data: {},
+      user: 1, // Change this to props.user when funcionality is implemented
+      stock: {},
+      stocks: [],
     };
   }
-
+  
   componentDidMount = () => {
+    this.loadPortfolio();
     this.setState({
       data: {},
     });
@@ -39,29 +38,71 @@ class IexAPI extends Component {
   };
 
   searchIEXForSymbol = (symbol) => {
-    const axios = require("axios");
     const searchURL = `${iex.IEX_BASE_URL}stock/${symbol}/${iex._endUrl}${iex._pToken}`;
-    let data = "";
-
-    var config = {
-      method: "get",
-      url: searchURL,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
-
-    axios(config)
+    axios
+      .get(searchURL)
       .then((response) => {
         this.setState({
-          data: response.data,
+          stock: response.data,
         });
       })
-
       .catch((error) => {
         console.log(error);
       });
+  };
+  
+  loadPortfolioItems = () => {
+    const apiPortfolio = [...this.state.portfolio];
+    apiPortfolio.forEach((portfolioItem) => {
+      axios
+        .get(
+          `${iex.IEX_BASE_URL}stock/${portfolioItem.stockSymbol}/${iex._endUrl}${iex._pToken}`
+        )
+        .then((response) => {
+          let item = {
+            stockSymbol: portfolioItem.stockSymbol,
+            close: response.data[0].close,
+            open: response.data[0].open,
+            high: response.data[0].high,
+            low: response.data[0].low,
+            average: response.data[0].average,
+            date: response.data[0].date,
+            label: response.data[0].label,
+            numberOfTrades: response.data[0].numberOfTrades,
+          };
+
+          const stocks = this.state.stocks.map((stock) =>
+            Object.assign({}, stock)
+          );
+
+          stocks.push(item);
+
+          this.setState({
+            stocks: stocks,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
+
+  loadPortfolio = () => {
+    axios
+      .get(`${USER_PORTFOLIO_URL}${this.state.user}`)
+      .then((response) => {
+        this.setState({
+          portfolio: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  
+  getData = (url) => {
+    // For future use
+    return axios.get(url).then((response) => response.data);
   };
 
   render() {
@@ -71,10 +112,12 @@ class IexAPI extends Component {
           stockSymbol={this.state.stockSymbol}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          loadPortfolioItems={this.loadPortfolioItems}
         />
+        <Stock stock={this.state.stock} />
         <StockList
           stockSymbol={this.state.stockSymbol}
-          data={this.state.data}
+          stocks={this.state.stocks}
         />
       </section>
     );
@@ -82,3 +125,15 @@ class IexAPI extends Component {
 }
 
 export default IexAPI;
+
+// average: 213.148
+// close: 213.17
+// date: "2020-08-21"
+// high: 213.24
+// label: "3:59 PM"
+// low: 213.075
+// minute: "15:59"
+// notional: 1315978.29
+// numberOfTrades: 65
+// open: 213.08
+// volume: 6174

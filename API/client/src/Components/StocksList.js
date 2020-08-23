@@ -2,49 +2,43 @@ import React from "react";
 import { Table } from "react-bootstrap";
 
 const StockList = (props) => {
-  let stocks;
-  if (props.data === undefined || Object.keys(props.data).length === 0) {
-    stocks = <tr><td>No stocks</td></tr>
+  let stockRows;
+  if (props.stocks === undefined || Object.keys(props.stocks).length === 0) {
+    stockRows = (<tr><td>No stocks to display</td></tr>);
   } else {
-    stocks = props.data.map((stock, index) => {
+    stockRows = props.stocks.map((stock, index) => {
       return (
         <tr key={index}>
-          <td>{props.stockSymbol}</td>
-          <td>{stock.average}</td>
+          <td>{stock.stockSymbol}</td>
           <td>{stock.close}</td>
-          <td>{stock.date}</td>
-          <td>{stock.high}</td>
-          <td>{stock.label}</td>
-          <td>{stock.low}</td>
-          <td>{stock.minute}</td>
-          <td>{stock.notational}</td>
-          <td>{stock.numberOfTrades}</td>
           <td>{stock.open}</td>
-          <td>{stock.volume}</td>
+          <td>{stock.high}</td>
+          <td>{stock.low}</td>
+          <td>{stock.average}</td>
+          <td>{stock.date}</td>
+          <td>{stock.label}</td>
+          <td>{stock.numberOfTrades}</td>
         </tr>
       );
     });
   }
   return (
     <section>
-      <Table className="table mt-5">
+      <Table className="table-dark table-striped table-borderless table-hover table-bg-trans text-nowrap">
         <thead>
-          <tr>
+          <tr className="table-th">
             <th>Symbol</th>
-            <th>Average</th>
-            <th>Close</th>
-            <th>Date</th>
+            <th>Close $</th>
+            <th>Open $</th>
             <th>High</th>
-            <th>Label</th>
             <th>Low</th>
-            <th>Minute</th>
-            <th>Notational</th>
-            <th>NumOfTrades</th>
-            <th>Open</th>
-            <th>Volume</th>
+            <th>Avg</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Trades</th>
           </tr>
         </thead>
-        <tbody>{stocks}</tbody>
+        <tbody>{stockRows}</tbody>
       </Table>
     </section>
   );

@@ -5,6 +5,7 @@ using Infrastructure.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Criterion;
 
 namespace Infrastructure
 {
@@ -12,6 +13,7 @@ namespace Infrastructure
     {
         UserPortfolio CreatePortfolioItem(UserPortfolio portfolioItem);
         UserPortfolio ReadPortfolioItemById(int id);
+        IEnumerable<UserPortfolio> ReadPortfolioItemByUserId(int userId);
         IEnumerable<UserPortfolio> ReadPortfolioItems();
         void UpdatePortfolioItem(UserPortfolio portfolioItem);
         void DeletePortfolioItem(int id);
@@ -62,6 +64,14 @@ namespace Infrastructure
             }
 
             return itemRead;
+        }
+
+        public IEnumerable<UserPortfolio> ReadPortfolioItemByUserId(int userId)
+        {
+            var transaction = _session.BeginTransaction();
+            var items = _session.CreateCriteria<UserPortfolio>().Add(Restrictions.Eq("UserId", userId)).List<UserPortfolio>();
+            transaction.Commit();
+            return items;
         }
 
         public IEnumerable<UserPortfolio> ReadPortfolioItems()

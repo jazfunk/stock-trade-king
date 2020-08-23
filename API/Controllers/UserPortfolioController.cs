@@ -42,6 +42,14 @@ namespace API.Controllers
             return NotFound();
         }
 
+        // GET
+        [HttpGet("user/{userId}", Name = "GetItemsByUserId")] // api/portfolio/user/{userId}
+        public ActionResult<IEnumerable<PortfolioReadModel>> GetItemsByUserId(int userId)
+        {
+            var items = _repository.ReadPortfolioItemByUserId(userId);
+            return Ok(_mapper.Map<IEnumerable<PortfolioReadModel>>(items));
+        }
+
         // POST
         [HttpPost]  // api/portfolio/{PortfolioReadModel}
         public ActionResult<PortfolioReadModel> CreateItem(PortfolioCreateModel portfolioCreateModel)

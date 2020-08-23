@@ -15,7 +15,7 @@ const Header = (props) => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/trade" exact component={Trade} />
-          <Route path="/portfolio" exact component={Portfolio} />
+          <Route path="/portfolio" render={(props) => <Portfolio {...props} user={props.user} />} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" render={(props) => <AddUser {...props} user={props.user} />} />
         </Switch>
