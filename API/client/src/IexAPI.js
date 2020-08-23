@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import API_IEX from "./Components/IexAPIComponent";
-import StockList from "./Components/StocksList";
 import Stock from "./Components/Stock";
 import axios from "axios";
 import { iex, USER_PORTFOLIO_URL } from "./Components/configBase";
 
 class IexAPI extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       user: 1, // Change this to props.user when funcionality is implemented
       stock: {},
@@ -38,7 +37,7 @@ class IexAPI extends Component {
   };
 
   searchIEXForSymbol = (symbol) => {
-    const searchURL = `${iex.IEX_BASE_URL}stock/${symbol}/${iex._endUrl}${iex._pToken}`;
+    const searchURL = `${iex.IEX_BASE_URL}stock/${symbol}/${iex._endIntradayUrl}${iex._pToken}`;
     axios
       .get(searchURL)
       .then((response) => {
@@ -56,7 +55,7 @@ class IexAPI extends Component {
     apiPortfolio.forEach((portfolioItem) => {
       axios
         .get(
-          `${iex.IEX_BASE_URL}stock/${portfolioItem.stockSymbol}/${iex._endUrl}${iex._pToken}`
+          `${iex.IEX_BASE_URL}stock/${portfolioItem.stockSymbol}/${iex._endIntradayUrl}${iex._pToken}`
         )
         .then((response) => {
           let item = {
@@ -115,25 +114,9 @@ class IexAPI extends Component {
           loadPortfolioItems={this.loadPortfolioItems}
         />
         <Stock stock={this.state.stock} />
-        <StockList
-          stockSymbol={this.state.stockSymbol}
-          stocks={this.state.stocks}
-        />
       </section>
     );
   }
 }
 
 export default IexAPI;
-
-// average: 213.148
-// close: 213.17
-// date: "2020-08-21"
-// high: 213.24
-// label: "3:59 PM"
-// low: 213.075
-// minute: "15:59"
-// notional: 1315978.29
-// numberOfTrades: 65
-// open: 213.08
-// volume: 6174
