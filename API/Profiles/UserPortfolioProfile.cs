@@ -13,6 +13,7 @@ namespace API.Profiles
             CreateMap<PortfolioCreateModel, UserPortfolio>();
             CreateMap<PortfolioUpdateModel, UserPortfolio>();
             CreateMap<UserPortfolio, PortfolioUpdateModel>();
+            CreateMap<UserPortfolio, IexPortfolioReadModel>();
         }
     }
 }

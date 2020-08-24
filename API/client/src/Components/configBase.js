@@ -31,6 +31,15 @@ export const USER_PORTFOLIO_URL = "https://localhost:5001/api/portfolio/user/";
 // </Card>
 
 
+// // UserPortfolio JSON Object
+// {
+//   "userId": 1,
+//   "stockSymbol": "tsla",
+//   "purchaseDate": "2020-08-21",
+//   "purchasePrice": 2049.63
+// }
+
+
 
 // intraday
 // {
@@ -45,14 +54,6 @@ export const USER_PORTFOLIO_URL = "https://localhost:5001/api/portfolio/user/";
 //   numberOfTrades: 65;
 //   open: 213.08;
 //   volume: 6174;
-// }
-
-// // UserPortfolio JSON Object
-// {
-//   "userId": 1,
-//   "stockSymbol": "tsla",
-//   "purchaseDate": "2020-08-21",
-//   "purchasePrice": 2049.63
 // }
 
 

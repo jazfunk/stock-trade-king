@@ -5,6 +5,9 @@ using API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using RestSharp;
+using RestSharp.Deserializers;
+using Newtonsoft.Json.Linq;
 
 namespace API.Controllers
 {
@@ -49,6 +52,41 @@ namespace API.Controllers
             var items = _repository.ReadPortfolioItemByUserId(userId);
             return Ok(_mapper.Map<IEnumerable<PortfolioReadModel>>(items));
         }
+
+
+        //// GET
+        //[HttpGet("iex/{userId}", Name = "GetIexByUserId")] // api/portfolio/iex/{symbol}
+        //public ActionResult<IEnumerable<IexPortfolioReadModel>> GetIexByUserId(int userId)
+        //{
+
+        //    var client = new RestClient("https://cloud.iexapis.com/");
+        //    var request = new RestRequest("stable/stock/{symbol}{urlEndPoint}", Method.GET);
+        //    string urlEP = "/intraday-prices?chartLast=1&token=pk_05c40d7c1b96480583b08175d1fb4408";
+        //    request.AddUrlSegment("symbol", symbol);
+        //    request.AddUrlSegment("urlEndPoint", urlEP);
+
+        //    var response = client.Execute(request);
+
+        //    JObject obs = JObject.Parse(response.Content);           
+
+
+            
+            
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // POST
         [HttpPost]  // api/portfolio/{PortfolioReadModel}
