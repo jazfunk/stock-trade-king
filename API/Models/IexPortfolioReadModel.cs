@@ -13,7 +13,7 @@ namespace API.Models
         
         // Add these fields to table
 
-        public virtual int PurchaseQty { get; set; }
+        public virtual int ShareQty { get; set; }
 
         public virtual string CompanyName { get; set; }
 

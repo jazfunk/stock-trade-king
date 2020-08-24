@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using RestSharp;
 using RestSharp.Deserializers;
 using Newtonsoft.Json.Linq;
+using API.Utilities;
 
 namespace API.Controllers
 {
@@ -54,25 +55,37 @@ namespace API.Controllers
         }
 
 
-        //// GET
-        //[HttpGet("iex/{userId}", Name = "GetIexByUserId")] // api/portfolio/iex/{symbol}
-        //public ActionResult<IEnumerable<IexPortfolioReadModel>> GetIexByUserId(int userId)
-        //{
+        // GET
+        [HttpGet("iex/{userId}", Name = "GetIexByUserId")] // api/portfolio/iex/{symbol}
+        public ActionResult<IEnumerable<IexPortfolioReadModel>> GetIexByUserId(int userId)
+        {
+            // This won't work because the IexPortfolioReadModel isn't exactly 
+            // the same as the response from the Iex API
+            // I am just experimenting right now
 
-        //    var client = new RestClient("https://cloud.iexapis.com/");
-        //    var request = new RestRequest("stable/stock/{symbol}{urlEndPoint}", Method.GET);
-        //    string urlEP = "/intraday-prices?chartLast=1&token=pk_05c40d7c1b96480583b08175d1fb4408";
-        //    request.AddUrlSegment("symbol", symbol);
-        //    request.AddUrlSegment("urlEndPoint", urlEP);
+            var portfolio = new IexApiHelper<IexPortfolioReadModel>();
+            var url = portfolio.SetUrl("tsla");
+            var request = portfolio.CreateGetRequest();
+            var response = portfolio.GetResponse(url, request);
+            IexPortfolioReadModel content = portfolio.GetContent<IexPortfolioReadModel>(response);
 
-        //    var response = client.Execute(request);
-
-        //    JObject obs = JObject.Parse(response.Content);           
-
+            return Ok(_mapper.Map<IEnumerable<IexPortfolioReadModel>>(content));
 
             
-            
-        //}
+            // ************************************************************************
+
+            // Previous method
+            // Retain for now, until sure it's not needed
+
+            //var client = new RestClient("https://cloud.iexapis.com/");
+            //var request = new RestRequest("stable/stock/{symbol}{urlEndPoint}", Method.GET);
+            //string urlEP = "/intraday-prices?chartLast=1&token=pk_05c40d7c1b96480583b08175d1fb4408";
+            //request.AddUrlSegment("symbol", symbol);
+            //request.AddUrlSegment("urlEndPoint", urlEP);
+            //var response = client.Execute(request);
+            //JObject obs = JObject.Parse(response.Content);
+
+        }
 
 
 
@@ -90,70 +103,70 @@ namespace API.Controllers
 
         // POST
         [HttpPost]  // api/portfolio/{PortfolioReadModel}
-        public ActionResult<PortfolioReadModel> CreateItem(PortfolioCreateModel portfolioCreateModel)
-        {
-            var itemModel = _mapper.Map<UserPortfolio>(portfolioCreateModel);
-            _repository.CreatePortfolioItem(itemModel);
+    public ActionResult<PortfolioReadModel> CreateItem(PortfolioCreateModel portfolioCreateModel)
+    {
+        var itemModel = _mapper.Map<UserPortfolio>(portfolioCreateModel);
+        _repository.CreatePortfolioItem(itemModel);
 
-            var portfolioReadModel = _mapper.Map<PortfolioReadModel>(itemModel);
-            return CreatedAtRoute(nameof(GetItemById), new { Id = portfolioReadModel.Id }, portfolioReadModel);
-        }
-
-        // PUT
-        [HttpPut("{id}")]  // api/portfolio/{id}
-        public ActionResult UpdateItem(int id, PortfolioUpdateModel portfolioUpdateModel)
-        {
-            var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
-            if (portfolioModelFromRepo == null)
-            {
-                return NotFound();
-            }
-
-            _mapper.Map(portfolioUpdateModel, portfolioModelFromRepo);
-
-            _repository.UpdatePortfolioItem(portfolioModelFromRepo);
-
-            return NoContent();
-        }
-
-        // PATCH
-        [HttpPatch("{id}")]  // api/portfolio/{id}
-        public ActionResult PartialItemUpdate(int id, JsonPatchDocument<PortfolioUpdateModel> patchDoc)
-        {
-            var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
-            if (portfolioModelFromRepo == null)
-            {
-                return NotFound();
-            }
-
-            var itemToPatch = _mapper.Map<PortfolioUpdateModel>(portfolioModelFromRepo);
-            patchDoc.ApplyTo(itemToPatch, ModelState);
-
-            if(!TryValidateModel(itemToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-
-            _mapper.Map(itemToPatch, portfolioModelFromRepo);
-
-            _repository.UpdatePortfolioItem(portfolioModelFromRepo);
-
-            return NoContent();
-        }
-
-        // DELETE
-        [HttpDelete("{id}")]  // api/portfolio/{id}
-        public ActionResult<UserPortfolio> DeleteItem(int id)
-        {
-            var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
-            if (portfolioModelFromRepo == null)
-            {
-                return NotFound();
-            }
-
-            _repository.DeletePortfolioItem(id);
-
-            return NoContent();
-        }
+        var portfolioReadModel = _mapper.Map<PortfolioReadModel>(itemModel);
+        return CreatedAtRoute(nameof(GetItemById), new { Id = portfolioReadModel.Id }, portfolioReadModel);
     }
+
+    // PUT
+    [HttpPut("{id}")]  // api/portfolio/{id}
+    public ActionResult UpdateItem(int id, PortfolioUpdateModel portfolioUpdateModel)
+    {
+        var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
+        if (portfolioModelFromRepo == null)
+        {
+            return NotFound();
+        }
+
+        _mapper.Map(portfolioUpdateModel, portfolioModelFromRepo);
+
+        _repository.UpdatePortfolioItem(portfolioModelFromRepo);
+
+        return NoContent();
+    }
+
+    // PATCH
+    [HttpPatch("{id}")]  // api/portfolio/{id}
+    public ActionResult PartialItemUpdate(int id, JsonPatchDocument<PortfolioUpdateModel> patchDoc)
+    {
+        var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
+        if (portfolioModelFromRepo == null)
+        {
+            return NotFound();
+        }
+
+        var itemToPatch = _mapper.Map<PortfolioUpdateModel>(portfolioModelFromRepo);
+        patchDoc.ApplyTo(itemToPatch, ModelState);
+
+        if (!TryValidateModel(itemToPatch))
+        {
+            return ValidationProblem(ModelState);
+        }
+
+        _mapper.Map(itemToPatch, portfolioModelFromRepo);
+
+        _repository.UpdatePortfolioItem(portfolioModelFromRepo);
+
+        return NoContent();
+    }
+
+    // DELETE
+    [HttpDelete("{id}")]  // api/portfolio/{id}
+    public ActionResult<UserPortfolio> DeleteItem(int id)
+    {
+        var portfolioModelFromRepo = _repository.ReadPortfolioItemById(id);
+        if (portfolioModelFromRepo == null)
+        {
+            return NotFound();
+        }
+
+        _repository.DeletePortfolioItem(id);
+
+        return NoContent();
+    }
+}
 }
