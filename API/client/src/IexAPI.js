@@ -4,6 +4,9 @@ import Stock from "./Components/Stock";
 import axios from "axios";
 import { iex, USER_PORTFOLIO_URL } from "./Components/configBase";
 
+//Adding some notes here to make a change
+//Delete afterwards
+
 class IexAPI extends Component {
   constructor(props) {
     super(props);
