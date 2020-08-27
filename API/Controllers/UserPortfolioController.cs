@@ -54,7 +54,6 @@ namespace API.Controllers
             return Ok(_mapper.Map<IEnumerable<PortfolioReadModel>>(items));
         }
 
-
         // GET
         [HttpGet("iex/{userId}", Name = "GetIexByUserId")] // api/portfolio/iex/{symbol}
         public ActionResult<IEnumerable<IexPortfolioReadModel>> GetIexByUserId(int userId)

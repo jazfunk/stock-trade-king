@@ -5,7 +5,6 @@ namespace API.Models
 {
     public class PortfolioUpdateModel
     {
-
         [Required]
         public virtual int UserId { get; set; }
 

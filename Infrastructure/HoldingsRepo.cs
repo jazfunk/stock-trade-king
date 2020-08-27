@@ -5,25 +5,31 @@ using Infrastructure.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using System;
+using NHibernate.Criterion;
 
 namespace Infrastructure
 {
-    public interface IUserRepo
+    public interface IHoldingsRepo
     {
-        User CreateUser(User userToCreate);
-        User ReadUserById(int id);
-        IEnumerable<User> ReadUsers();
-        void UpdateUser(User user);
-        void DeleteUserById(int id);
+        Holdings CreateHolding(Holdings holdingToCreate);
+
+        Holdings ReadHoldingsById(int id);
+
+        IEnumerable<Holdings> ReadHoldingsByUserId(int userId);
+
+        IEnumerable<Holdings> ReadAllHoldings();
+
+        void UpdateHoldings(Holdings holdingToUpdate);
+
+        void DeleteHoldingById(int id);
     }
 
-    public class UserRepo : IUserRepo
+    public class HoldingsRepo : IHoldingsRepo
     {
         private readonly ISession _session;
         private readonly ISessionFactory _sessionFactory;
 
-        public UserRepo()
+        public HoldingsRepo()
         {
             _sessionFactory = Fluently.Configure()
                 .Database(PostgreSQLConfiguration.PostgreSQL82
@@ -40,53 +46,62 @@ namespace Infrastructure
             _session = _sessionFactory.OpenSession();
         }
 
-        public User CreateUser(User userToCreate)
+        public Holdings CreateHolding(Holdings holdingToCreate)
         {
-            var userCreated = new User();
+            var holdingCreated = new Holdings();
             using (var transaction = _session.BeginTransaction())
             {
-                var newId = _session.Save(userToCreate);
-                userCreated = _session.Get<User>(newId);
+                var newId = _session.Save(holdingToCreate);
+                holdingCreated = _session.Get<Holdings>(newId);
                 transaction.Commit();
             }
 
-            return userCreated;
+            return holdingCreated;
         }
 
-        public User ReadUserById(int id)
+        public Holdings ReadHoldingsById(int id)
         {
-            var userRead = new User();
+            var holdingRead = new Holdings();
             using (var transaction = _session.BeginTransaction())
             {
-                userRead = _session.Get<User>(id);
+                holdingRead = _session.Get<Holdings>(id);
                 transaction.Commit();
             }
 
-            return userRead;            
+            return holdingRead;
         }
 
-        public IEnumerable<User> ReadUsers()
+        public IEnumerable<Holdings> ReadHoldingsByUserId(int userId)
         {
             var transaction = _session.BeginTransaction();
-            var users = _session.CreateCriteria<User>().List<User>();
+            var items = _session.CreateCriteria<Holdings>().Add(Restrictions.Eq("UserId", userId)).List<Holdings>();
             transaction.Commit();
-            return users;
+            return items;
         }
 
-        public void UpdateUser(User user)
+        public IEnumerable<Holdings> ReadAllHoldings()
+        {
+            var transaction = _session.BeginTransaction();
+            var items = _session.CreateCriteria<Holdings>().List<Holdings>();
+            transaction.Commit();
+            return items;
+        }
+
+        public void UpdateHoldings(Holdings holdingsToUpdate)
         {
             using (var transaction = _session.BeginTransaction())
             {
-                _session.Update(user);
+                _session.Update(holdingsToUpdate);
                 transaction.Commit();
             }
+
         }
 
-        public void DeleteUserById(int id)
+        public void DeleteHoldingById(int id)
         {
             using (var transaction = _session.BeginTransaction())
-            {            
-                _session.Delete(_session.Get<User>(id));
+            {
+                _session.Delete(_session.Get<Holdings>(id));
                 transaction.Commit();
             }
         }
