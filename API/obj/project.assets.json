@@ -3511,8 +3511,8 @@
     },
     "Core/1.0.0": {
       "type": "project",
-      "path": "../Core/Core.csproj",
-      "msbuildProject": "../Core/Core.csproj"
+      "path": "../core/Core.csproj",
+      "msbuildProject": "../core/Core.csproj"
     },
     "Infrastructure/1.0.0": {
       "type": "project",
@@ -3535,11 +3535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\api\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\API.csproj",
+      "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\api\\API.csproj",
       "packagesPath": "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\obj\\",
+      "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jeff.ACTIONTRAFFIC\\AppData\\Roaming\\NuGet\\NuGet.Config",

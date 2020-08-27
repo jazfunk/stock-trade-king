@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HnGmOGbWEJxgQ6RwafQokf8uk3Azty8dYgueDAK1QD7evM6s+0zWINq2FA9rHw+2RjqRvg/O1ZVOMahoOKwteQ==",
+  "dgSpecHash": "XjzMT4ZOHMDVimtAmoTmxeNOvwDNCcr+b89Bcs9deurQG2RHyoIswvF/Vfp3MT5gph8wQhkC5h9RCsEc6L8UwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",

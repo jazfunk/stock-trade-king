@@ -4,14 +4,14 @@
     "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj": {
+    "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\Core.csproj",
         "packagesPath": "C:\\Users\\Jeff.ACTIONTRAFFIC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\Core\\obj\\",
+        "outputPath": "C:\\Users\\Jeff\\Documents\\CSharpProjects\\stock-trade-king\\core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeff.ACTIONTRAFFIC\\AppData\\Roaming\\NuGet\\NuGet.Config",
