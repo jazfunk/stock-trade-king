@@ -8,6 +8,8 @@ export const iex = {
 export const USER_PORTFOLIO_URL = "https://localhost:5001/api/portfolio/user/";
 
 
+// Will use the Bootstrap Card element for 
+// the stocks whne I get the back end right.
 
 // <Card style={{ width: "20rem" }}>
 // {/* <Card.Img variant="top" src={StockTradeKingLogo} /> */}
@@ -41,6 +43,7 @@ export const USER_PORTFOLIO_URL = "https://localhost:5001/api/portfolio/user/";
 
 
 
+// This API call is free
 // intraday
 // {
 //   average: 213.148;
@@ -57,6 +60,8 @@ export const USER_PORTFOLIO_URL = "https://localhost:5001/api/portfolio/user/";
 // }
 
 
+
+// This API call costs 1 point
 // quote filtered
 // {
 //   "symbol": "TSLA",
