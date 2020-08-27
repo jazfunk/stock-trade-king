@@ -21,6 +21,5 @@ namespace Infrastructure.Mappings
             Map(x => x.CreatedAt).Column("created_at");
             Table("holdings");
         }
-
     }
 }

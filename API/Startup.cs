@@ -36,6 +36,8 @@ namespace API
 
             services.AddScoped<IHoldingsRepo, HoldingsRepo>();
 
+            services.AddScoped<ILedgerRepo, LedgerRepo>();
+
             services.AddSpaStaticFiles(config =>
             {
                 config.RootPath = "client/build";
